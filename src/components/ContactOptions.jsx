@@ -9,30 +9,29 @@ function ContactOptions() {
         changeContactMode(!contactMode)
     }
 
-    // function encode(data) {
-    //     return Object.keys(data)
-    //         .map(
-    //             (key) =>
-    //                 encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-    //         )
-    //         .join("&");
-    // }
-
-     
+    function encode(data) {
+        return Object.keys(data)
+            .map(
+                (key) =>
+                    encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+            )
+            .join("&");
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
-
-        let testForm = document.querySelector('#contact form');
-        const formData = new FormData(testForm);
-
         fetch("/", {
             method: "POST",
             headers: { 
-                'Accept': 'application/x-www-form-urlencoded',
+                'Accept': 'application/www-form-urlencoded',
                 'Content-Type': 'application/www-form-urlencoded'
             },
-            body:  new URLSearchParams(formData).toString()
+            body: encode({
+                "form-name": e.target.getAttribute('name'),
+                "form_name": document.getElementsByName('name')[1],
+                "form_email": document.getElementsByName('email')[1],
+                "form_body": document.getElementsByName('message')[1]
+            })
         })
             .then(() => {
                 if (!Response.ok) {
