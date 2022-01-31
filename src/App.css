@@ -15,12 +15,12 @@ body {
 
 a:link {
   text-decoration: inherit;
-
+  color: inherit;
 }
 
 a:visited {
   text-decoration: inherit;
-
+  color: inherit;
 }
 
 h1 {

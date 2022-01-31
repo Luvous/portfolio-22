@@ -21,8 +21,8 @@ function Planet() {
                 className='planet-video'
                 loop
                 type='video/mp4'
-                muted
                 controls={false}
+                muted
                 autoPlay
             />
         </motion.div>

@@ -52,9 +52,9 @@ function ContactOptions() {
             <div className='contact-buttons'>
                 {contactMode ?
                     (<div className='row space-between'>
-                        <div className='contact-box'><Icon icon="teenyicons:github-solid" width='50' /></div>
-                        <div className='contact-box'><Icon icon="brandico:linkedin" width='45' /></div>
-                        <div className='contact-box'><Icon icon="akar-icons:whatsapp-fill" width='50' /></div>
+                        <a href='https://github.com/Luvous' target='_blank' rel='noreferrer' className='contact-box'><Icon icon="teenyicons:github-solid" width='50' /></a>
+                        <a href='https://www.linkedin.com/in/tomvarela/' target='_blank' rel='noreferrer' className='contact-box'><Icon icon="brandico:linkedin" width='45' /></a>
+                        <a href='https://wa.me/5491126863269' target='_blank' rel='noreferrer' className='contact-box'><Icon icon="akar-icons:whatsapp-fill" width='50' /></a>
                     </div>)
                     :
                     (<form onSubmit={handleSubmit} name='contact'>
