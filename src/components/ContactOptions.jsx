@@ -32,7 +32,7 @@ function ContactOptions() {
                 'Accept': 'application/x-www-form-urlencoded',
                 'Content-Type': 'application/www-form-urlencoded'
             },
-            body:  new URLSearchParams(formData).toString();
+            body:  new URLSearchParams(formData).toString()
         })
             .then(() => {
                 if (!Response.ok) {
