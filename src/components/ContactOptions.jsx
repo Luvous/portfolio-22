@@ -50,9 +50,9 @@ function ContactOptions() {
                     </div>)
                     :
                     (<form onSubmit={handleSubmit} name='contact'>
-                        <input className='form-input' type='text' name='name' placeholder='Name' autoComplete='off' />
-                        <input className='form-input' type='email' name="email" placeholder='E-Mail' autoComplete='off' />
-                        <textarea className='form-input-text' name="message" placeholder='Body' />
+                        <input className='form-input' type='text' name='name' placeholder='Name' autoComplete='off' required/>
+                        <input className='form-input' type='email' name="email" placeholder='E-Mail' autoComplete='off' required/>
+                        <textarea className='form-input-text' name="message" placeholder='Body' required/>
                         <button className='form-input-button' type='submit'>SUBMIT</button>
                         <input type="hidden" name="form-name" value="contact" />
                     </form>)}
