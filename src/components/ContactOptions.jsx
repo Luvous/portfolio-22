@@ -27,20 +27,12 @@ function ContactOptions() {
                 "form-name": e.target.getAttribute('name')
             })
         })
-
             .then(() => {
-                if (!Response.ok) {
-                    toast.error('Error!', {
-                        theme: 'colored'
-                    })
-                }
-                else {
-                    toast.success('Message Send!', {
-                        theme: 'colored'
-                    })
-                }
-            })
+                toast.success('Message Send!', {
+                    theme: 'colored'
+                })
 
+            })
             .catch(error => toast.error('Error!' + error, {
                 theme: 'colored'
             }));
@@ -64,9 +56,9 @@ function ContactOptions() {
                         <button className='form-input-button' type='submit'>SUBMIT</button>
                         <input type="hidden" name="form-name" value="contact" />
                     </form>)}
-                
+
                 <button className={`row align-center contact-message ${contactMode ? 'contact-icons' : 'contact-back'}`} onClick={() => changeContact()}>
-                    <p>{contactMode ? <Icon icon="ant-design:message-filled" width='42'/> : <Icon icon="topcoat:back" width='30' /> }</p>
+                    <p>{contactMode ? <Icon icon="ant-design:message-filled" width='42' /> : <Icon icon="topcoat:back" width='30' />}</p>
                 </button>
             </div>
         </div>
