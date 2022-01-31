@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import planet_02 from '../images/planet_02.mp4';
-import moon from '../images/moon.mp4';
+import moon from '../images/moon_00.png';
 
 function PlanetWithMoon() {
 
@@ -19,13 +19,8 @@ function PlanetWithMoon() {
                 translateX: scaleXMoon,
                 translateY: scaleY
             }}>
-            <video
+            <img
                 src={moon}
-                loop
-                type='video/mp4'
-                muted
-                controls={false}
-                autoPlay
             />
         </motion.div>
         <motion.div

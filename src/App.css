@@ -157,9 +157,10 @@ section {
   filter: hue-rotate(120deg);
 }
 
-.moon-planet video {
+.moon-planet img {
   width: inherit;
   border-radius: 200px;
+  filter: brightness(0.35) sepia(3) hue-rotate(100deg);
 }
 
 .asteroid {
@@ -169,7 +170,18 @@ section {
   left: 10%;
   top: 290%;
   transform: rotate(180deg);
-  filter: sepia(1) saturate(2.2) hue-rotate(35deg);
+  filter: sepia(1) saturate(2.2) hue-rotate(35deg) blur(8px);
+  animation: spinAsteroid 75s linear 0s infinite;
+}
+
+@keyframes spinAsteroid {
+  from{
+    transform: rotate(0);
+  }
+
+  to{
+    transform: rotate(360deg);
+  }
 }
 
 .card {
@@ -896,8 +908,9 @@ select:-webkit-autofill:focus {
   }
 
   .planet-contact {
-    width: 1400px;
-    right: -35rem;
-    bottom: 25rem;
+    width: 780px;
+    right: -55rem;
+    bottom: 29rem;
+    filter: saturate(1.5) hue-rotate(300deg) blur(3px);
   }
 }
