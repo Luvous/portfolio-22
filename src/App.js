@@ -1,6 +1,6 @@
 import './App.css';
 import SunVideo from './components/SunVideo';
-import Astronaut from './components/Astronaut';
+import Asteroid from './components/Asteroid';
 import IntroContent from './components/IntroContent';
 import AboutSection from './components/sections/AboutSection';
 import PlanetWithMoon from './components/PlanetWithMoon';
@@ -13,7 +13,7 @@ import Cards from './components/Cards';
 import Skills from './components/Skills';
 import ContactOptions from './components/ContactOptions';
 import ContactPlanet from './components/ContactPlanet';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -44,7 +44,7 @@ function App() {
       </section>
       <section id='projects'>
         <ProjectsSection />
-        <Astronaut />
+        <Asteroid />
         <Cards />
       </section>
       <section id='skills'>

@@ -1,8 +1,8 @@
 import React from 'react';
-import AstronautPath from '../images/asteroid.png';
+import AsteroidImage from '../images/asteroid.png';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 
-const Astronaut = () => {
+const Asteroid = () => {
     const { scrollYProgress } = useViewportScroll();
 
     const transY = useTransform(scrollYProgress, [0, 1], [-600, 1500]);
@@ -19,10 +19,10 @@ const Astronaut = () => {
                 scale: scale,
             }}
         >
-            <img className='asteroid' src={AstronautPath} />
+            <img alt='' className='asteroid' src={AsteroidImage} />
         </motion.div>
     )
 }
 
-export default Astronaut
+export default Asteroid
 

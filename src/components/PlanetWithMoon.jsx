@@ -21,6 +21,7 @@ function PlanetWithMoon() {
             }}>
             <img
                 src={moon}
+                alt=''
             />
         </motion.div>
         <motion.div
