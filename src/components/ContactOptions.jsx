@@ -9,14 +9,14 @@ function ContactOptions() {
         changeContactMode(!contactMode)
     }
 
-    function encode(data) {
-        return Object.keys(data)
-            .map(
-                (key) =>
-                    encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-            )
-            .join("&");
-    }
+    // function encode(data) {
+    //     return Object.keys(data)
+    //         .map(
+    //             (key) =>
+    //                 encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+    //         )
+    //         .join("&");
+    // }
 
      
 
