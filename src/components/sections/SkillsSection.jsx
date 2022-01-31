@@ -19,6 +19,10 @@ function SkillsSection() {
             <h2 className='section-title upside-down'>SKILLS</h2>
             <h2 className='section-title'>SKILLS</h2>
             <h2 className='section-title upside-down'>SKILLS</h2>
+            <h2 className='section-title'>SKILLS</h2>
+            <h2 className='section-title upside-down'>SKILLS</h2>
+            <h2 className='section-title'>SKILLS</h2>
+            <h2 className='section-title upside-down'>SKILLS</h2>
         </motion.div>
     )
 }

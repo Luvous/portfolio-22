@@ -18,20 +18,33 @@ function ContactOptions() {
             .join("&");
     }
 
+     
+
     function handleSubmit(e) {
         e.preventDefault();
+
+        let testForm = document.querySelector('#contact form');
+        const formData = new FormData(testForm);
+
         fetch("/", {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({
-                "form-name": e.target.getAttribute('name'),
-                "form-field": 'name'
-            })
+            headers: { 
+                'Accept': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/www-form-urlencoded'
+            },
+            body:  new URLSearchParams(formData).toString();
         })
             .then(() => {
-                toast.success('Message Send!', {
-                    theme: 'colored'
-                })
+                if (!Response.ok) {
+                    toast.error('Error!', {
+                        theme: 'colored'
+                    })
+                }
+                else {
+                    toast.success('Message Send!', {
+                        theme: 'colored'
+                    })
+                }
             })
             .catch(error => toast.error('Error!' + error, {
                 theme: 'colored'
@@ -50,9 +63,9 @@ function ContactOptions() {
                     </div>)
                     :
                     (<form onSubmit={handleSubmit} name='contact'>
-                        <input className='form-input' type='text' name='name' placeholder='Name' autoComplete='off' required />
-                        <input className='form-input' type='email' name="email" placeholder='E-Mail' autoComplete='off' required />
-                        <textarea className='form-input-text' name="message" placeholder='Body' required />
+                        <input className='form-input' type='text' name='name' placeholder='Name' autoComplete='off' required/>
+                        <input className='form-input' type='email' name="email" placeholder='E-Mail' autoComplete='off' required/>
+                        <textarea className='form-input-text' name="message" placeholder='Body' required/>
                         <button className='form-input-button' type='submit'>SUBMIT</button>
                         <input type="hidden" name="form-name" value="contact" />
                     </form>)}
