@@ -22,9 +22,8 @@ function ContactOptions() {
         e.preventDefault();
         fetch("/", {
             method: "POST",
-            headers: { 
-                'Accept': 'application/www-form-urlencoded',
-                'Content-Type': 'application/www-form-urlencoded'
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
             body: encode({
                 "form-name": e.target.getAttribute('name'),
