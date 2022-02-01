@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import { toast } from 'react-toastify';
 
@@ -18,10 +18,12 @@ function ContactOptions() {
             .join("&")
     }
 
+    const [isSubmitted, setIsSubmitted] = useState(false)
+
     const [formData, setFormData] = useState({
-        name: "test",
-        email: "test",
-        message: "test"
+        name: "",
+        email: "",
+        message: ""
     });
 
     const handleChange = e => {
@@ -32,36 +34,64 @@ function ContactOptions() {
         })
     };
 
-    function handleSubmit(e) {
+    const handleSubmit = e => {
+        setIsSubmitted(true)
         e.preventDefault();
-        fetch("/", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: encode({
-                "form-name": e.target.getAttribute('name'), ...formData
-            }).then(() => {
-                setFormData({ name: "", email: "", message: "" })
+    }
+
+    useEffect(() => {
+        if (isSubmitted) {
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact-form", ...formData })
             })
-        })
-            .then(() => {
-                if (!Response.ok) {
-                    console.log(formData);
-                    toast.error('Error!', {
-                        theme: 'colored'
-                    })
-                }
-                else {
+                .then(() => {
                     toast.success('Message Send!', {
                         theme: 'colored'
                     })
-                }
-            })
-            .catch(error => toast.error('Error!' + error, {
-                theme: 'colored'
-            }));
-    }
+                })
+                .then(() => setIsSubmitted(false))
+                .then(() => setFormData({ name: "", email: "", message: "" }))
+                .catch(error => {
+                    toast.error('Error!' + error, {
+                        theme: 'colored'
+                    })
+                })
+        }
+    }, [formData, isSubmitted])
+
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     fetch("/", {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/x-www-form-urlencoded'
+    //         },
+    //         body: encode({
+    //             "form-name": e.target.getAttribute('name'), ...formData
+    //         })
+    //     })
+    //         .then(() => {
+    //             setFormData({ name: "", email: "", message: "" })
+    //         })
+    //         .then(() => {
+    //             if (!Response.ok) {
+    //                 console.log(formData);
+    //                 toast.error('Error!', {
+    //                     theme: 'colored'
+    //                 })
+    //             }
+    //             else {
+    //                 toast.success('Message Send!', {
+    //                     theme: 'colored'
+    //                 })
+    //             }
+    //         })
+    //         .catch(error => toast.error('Error!' + error, {
+    //             theme: 'colored'
+    //         }));
+    // }
 
 
     return (

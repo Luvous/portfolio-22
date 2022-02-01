@@ -20,6 +20,9 @@ a:link {
 
 a:visited {
   text-decoration: inherit;
+}
+
+#contact a{
   color: inherit;
 }
 
@@ -27,7 +30,6 @@ h1 {
   margin: 2rem 0;
   font-size: 5.5rem;
 }
-
 
 .subtitle {
   font-size: 2rem;
@@ -178,7 +180,7 @@ section {
   from{
     transform: rotate(0);
   }
-
+  
   to{
     transform: rotate(360deg);
   }
