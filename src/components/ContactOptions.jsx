@@ -40,7 +40,7 @@ function ContactOptions() {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
             body: encode({
-                "form-name": e.target.getAttribute('name'), formData
+                "form-name": e.target.getAttribute('name'), ...formData
             })
         })
             .then(() => {
