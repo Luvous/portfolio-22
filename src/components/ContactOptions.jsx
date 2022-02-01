@@ -41,8 +41,9 @@ function ContactOptions() {
             },
             body: encode({
                 "form-name": e.target.getAttribute('name'), ...formData
+            }).then(() => {
+                setFormData({ name: "", email: "", message: "" })
             })
-            .then(()=> setFormData({name: "", email: "",  message: ""}))
         })
             .then(() => {
                 if (!Response.ok) {
