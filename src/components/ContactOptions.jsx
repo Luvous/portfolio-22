@@ -19,9 +19,9 @@ function ContactOptions() {
     }
 
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: ""
+        name: "test",
+        email: "test",
+        message: "test"
     });
 
     const handleChange = e => {
@@ -42,6 +42,7 @@ function ContactOptions() {
             body: encode({
                 "form-name": e.target.getAttribute('name'), ...formData
             })
+            .then(()=> setFormData({name: "", email: "",  message: ""}))
         })
             .then(() => {
                 if (!Response.ok) {
