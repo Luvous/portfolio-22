@@ -15,8 +15,22 @@ function ContactOptions() {
                 (key) =>
                     encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
             )
-            .join("&");
+            .join("&")
     }
+
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
+
+    const handleChange = e => {
+        const { name, value } = e.target
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+    };
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -26,14 +40,12 @@ function ContactOptions() {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
             body: encode({
-                "form-name": e.target.getAttribute('name'),
-                "form_name": document.getElementsByName('name')[1],
-                "form_email": document.getElementsByName('email')[1],
-                "form_body": document.getElementsByName('message')[1]
+                "form-name": e.target.getAttribute('name'), formData
             })
         })
             .then(() => {
                 if (!Response.ok) {
+                    console.log(formData);
                     toast.error('Error!', {
                         theme: 'colored'
                     })
@@ -61,9 +73,9 @@ function ContactOptions() {
                     </div>)
                     :
                     (<form onSubmit={handleSubmit} name='contact'>
-                        <input className='form-input' type='text' name='name' placeholder='Name' autoComplete='off' required/>
-                        <input className='form-input' type='email' name="email" placeholder='E-Mail' autoComplete='off' required/>
-                        <textarea className='form-input-text' name="message" placeholder='Body' required/>
+                        <input className='form-input' type='text' name='name' placeholder='Name' autoComplete='off' required value={formData.name} onChange={handleChange} />
+                        <input className='form-input' type='email' name="email" placeholder='E-Mail' autoComplete='off' required value={formData.email} onChange={handleChange} />
+                        <textarea className='form-input-text' name="message" placeholder='Body' required value={formData.message} onChange={handleChange} />
                         <button className='form-input-button' type='submit'>SUBMIT</button>
                         <input type="hidden" name="form-name" value="contact" />
                     </form>)}
@@ -77,3 +89,5 @@ function ContactOptions() {
 }
 
 export default ContactOptions
+
+
