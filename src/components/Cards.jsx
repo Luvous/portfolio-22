@@ -15,7 +15,7 @@ function Cards() {
                 Mockup={mockup_00}
                 GitLink='https://github.com/Luvous/matias-portfolio'
                 WebsiteLink='https://matias-varela.herokuapp.com/'
-                ProjectDescription='A website that I build for a comicbook artist, Matias Varela, the website has multiple sections, included a portfolio, store, blog and contact.'
+                ProjectDescription='A website that I built for a comicbook artist, Matias Varela, the website has multiple sections, included a portfolio, store, blog and contact.'
             />
             <ProjectCard
                 ProjectTitle='NewsScrapper'
