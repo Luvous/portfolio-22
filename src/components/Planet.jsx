@@ -20,10 +20,10 @@ function Planet() {
                 src={planet_01}
                 className='planet-video'
                 type='video/mp4'
-                loop
                 muted
                 autoPlay={true}
                 controls={false}
+                loop={true}
             />
         </motion.div>
     )

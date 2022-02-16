@@ -7,10 +7,10 @@ function ContactPlanet() {
                 src={planet_03}
                 type='video/mp4'
                 className='planet-contact'
-                loop
                 muted
                 autoPlay={true}
                 controls={false}
+                loop={true}
             />
   </div>;
 }

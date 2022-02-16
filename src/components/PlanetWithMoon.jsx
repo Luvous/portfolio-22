@@ -34,10 +34,10 @@ function PlanetWithMoon() {
             <video
                 src={planet_02}
                 type='video/mp4'
-                loop
                 muted
                 autoPlay={true}
                 controls={false}
+                loop={true}
             />
         </motion.div>
     </div>;

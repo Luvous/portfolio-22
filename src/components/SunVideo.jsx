@@ -9,10 +9,10 @@ function SunVideo() {
                 type='video/mp4'
                 id='sunVideo'
                 className='video'
-                loop
                 muted
                 autoPlay={true}
                 controls={false}
+                loop={true}
             />
         </div>
     )
