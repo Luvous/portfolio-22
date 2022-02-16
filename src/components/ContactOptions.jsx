@@ -52,7 +52,7 @@ function ContactOptions() {
                             theme: 'colored'
                         })
                     } else if(!Response.ok){
-                        toast.error('Error!' + error, {
+                        toast.error('Error!', {
                             theme: 'colored'
                         })
                     }
