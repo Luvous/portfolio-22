@@ -33,11 +33,11 @@ function PlanetWithMoon() {
             }}>
             <video
                 src={planet_02}
-                loop
                 type='video/mp4'
-                controls={false}
+                loop
                 muted
-                autoPlay
+                autoPlay={true}
+                controls={false}
             />
         </motion.div>
     </div>;

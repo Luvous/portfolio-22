@@ -47,14 +47,20 @@ function ContactOptions() {
                 body: encode({ "form-name": "contact-form", ...formData })
             })
                 .then(() => {
-                    toast.success('Message Send!', {
-                        theme: 'colored'
-                    })
+                    if (Response.ok) {
+                        toast.success('Message Send!', {
+                            theme: 'colored'
+                        })
+                    } else if(!Response.ok){
+                        toast.error('Error!' + error, {
+                            theme: 'colored'
+                        })
+                    }
                 })
                 .then(() => setIsSubmitted(false))
                 .then(() => setFormData({ name: "", email: "", message: "" }))
                 .catch(error => {
-                    toast.error('Error!' + error, {
+                    toast.error(error, {
                         theme: 'colored'
                     })
                 })

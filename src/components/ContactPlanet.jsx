@@ -5,12 +5,12 @@ function ContactPlanet() {
   return <div>
       <video
                 src={planet_03}
+                type='video/mp4'
                 className='planet-contact'
                 loop
-                type='video/mp4'
                 muted
+                autoPlay={true}
                 controls={false}
-                autoPlay
             />
   </div>;
 }

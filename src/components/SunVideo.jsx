@@ -5,14 +5,14 @@ function SunVideo() {
     return (
         <div>
             <video
-                id='sunVideo'
                 src={sunVideo}
                 type='video/mp4'
-                loop
-                controls={false}
-                muted
-                autoPlay
+                id='sunVideo'
                 className='video'
+                loop
+                muted
+                autoPlay={true}
+                controls={false}
             />
         </div>
     )

@@ -19,11 +19,11 @@ function Planet() {
             <video
                 src={planet_01}
                 className='planet-video'
-                loop
                 type='video/mp4'
-                controls={false}
+                loop
                 muted
-                autoPlay
+                autoPlay={true}
+                controls={false}
             />
         </motion.div>
     )
